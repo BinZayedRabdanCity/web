@@ -1,4 +1,10 @@
-// عند تحميل الصفحة
+const audio = document.getElementById("audioPlayer");
+audio.src = config.music;
+const volumeSlider = document.getElementById("volumeRange");
+volumeSlider.addEventListener("input", () => {
+  audio.volume = volumeSlider.value;
+});
+audio.volume = volumeSlider.value;
 if (!localStorage.getItem('visited')) {
   // هذه أول زيارة لهذا الزائر
   // زيادة عدد المشاهدات على السيرفر (أو حفظ في مكان مشترك)
