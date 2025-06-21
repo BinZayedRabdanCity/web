@@ -378,15 +378,95 @@ body {
   <label for="volumeRange">الصوت</label>
   <input type="range" id="volumeRange" min="0" max="1" step="0.01" />
 </div>
-<audio id="myAudio" autoplay loop muted>
-  <source src="https://voca.ro/18apnXdbuLkd" type="audio/mpeg" />
+<audio id="discordSong" autoplay loop muted>
+  <source src="https://cdn.pixabay.com/video/2025/06/21/287143.mp3" type="audio/mpeg">
 </audio>
 
 <div class="profile-section">
   <div class="banner" id="banner" style="background-image: url('https://media.discordapp.net/attachments/1210384791334158428/1321773494954098729/1091798226467827772.png?ex=685725be&is=6855d43e&hm=623aa5e2e2f11869553f33b3e84cb92c4501235983d69a63e16cf363c58f86d7&=&format=webp&quality=lossless'); position: relative;">
     <div class="avatar" id="avatar" style="background-image: url('https://media.discordapp.net/attachments/1384449763298115604/1386050957858836603/ezgif-4ad1dd5271460d.gif?ex=68584c0b&is=6856fa8b&hm=ddc9bf92d41558371d89f0a0862b3116715e86d55593aa371d79c456d07133cc&=');"></div>
   </div>
-  
+  <!-- مشغل الأغنية مع موجات الصوت -->
+<div class="music-widget">
+  <div class="music-info">
+    <div class="waves">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    
+    <div class="song-details">
+      <div class="song-title">Now Playing</div>
+      <div class="song-name">No - Songs </div>
+    </div>
+  </div>
+  <audio id="discordSong" muted autoplay loop>
+    <source src="https://cdn.pixabay.com/video/2025/06/21/287143.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<style>
+.music-widget {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #23272a;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #5865f2aa;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  min-width: 240px;
+  font-family: 'El Messiri', sans-serif;
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-title {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.song-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* موجات الصوت */
+.waves {
+  display: flex;
+  align-items: flex-end;
+  height: 30px;
+  gap: 2px;
+}
+.waves span {
+  display: block;
+  width: 4px;
+  background: #5865f2;
+  animation: wave 1.2s infinite ease-in-out;
+}
+.waves span:nth-child(1) { animation-delay: 0s; height: 8px; }
+.waves span:nth-child(2) { animation-delay: 0.1s; height: 14px; }
+.waves span:nth-child(3) { animation-delay: 0.2s; height: 20px; }
+.waves span:nth-child(4) { animation-delay: 0.3s; height: 14px; }
+.waves span:nth-child(5) { animation-delay: 0.4s; height: 8px; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(2); }
+}
+</style>
+
   
   <div class="info">
     <h1 id="username">BinZayed</h1>
@@ -413,6 +493,7 @@ body {
 
 <audio id="audioPlayer" autoplay loop preload="auto" style="display:none;"></audio>
 
+
 <script>
   const config = {
     username: "BinZayed",
@@ -421,7 +502,7 @@ body {
     bio: "مبرمج شغوف بابتكار حلول ذكية وبسيطة، يحب التحدي والتعلم المستمر، يسعى لتطوير نفسه دائماً وكتابة كود نظيف واحترافي.",
     avatar: "https://media.discordapp.net/attachments/1384449763298115604/1386050957858836603/ezgif-4ad1dd5271460d.gif?ex=68584c0b&is=6856fa8b&hm=ddc9bf92d41558371d89f0a0862b3116715e86d55593aa371d79c456d07133cc&=",
     banner: "https://media.discordapp.net/attachments/1210384791334158428/1321773494954098729/1091798226467827772.png?ex=685725be&is=6855d43e&hm=623aa5e2e2f11869553f33b3e84cb92c4501235983d69a63e16cf363c58f86d7&=&format=webp&quality=lossless",
-    music: "https://up4net.com/Taq/ScreenRecording-05-30-2025-20-37-25-1.mp3",
+    music: "https://cdn.pixabay.com/video/2025/06/21/287143.mp3",
     games: [
       { img: "https://logos-world.net/wp-content/uploads/2021/03/FiveM-Symbol.png", name: "Fivem", desc: "لعبة عالم مفتوح مثيرة." },
       { img: "https://graphicsprings.com/wp-content/uploads/2023/07/image-62.png", name: "Minecraft", desc: "لعبة بناء ومغامرة." },
