@@ -71,6 +71,7 @@
     0%, 100% { box-shadow: 0 0 12px #ffffffaa; }
     50% { box-shadow: 0 0 20px rgb(182, 182, 182); }
   }
+  
 
   /* ===== باقي التصميم ===== */
 
@@ -96,8 +97,8 @@
     bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
-    width: 130px;
-    height: 130px;
+    width: 50px;
+    height: 50px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -177,6 +178,196 @@
     padding: 0 14px 18px;
     min-height: 48px;
   }
+    body {
+    background-color: #1e1f22;
+    color: #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'El Messiri', sans-serif;
+      background-image: url('https://media.discordapp.net/attachments/1384449763298115604/1385897685281804410/image.png?ex=6857bd4c&is=68566bcc&hm=48c310a3f62abeb0f54b6ee488751cdded101bb77105bb2d51902e7b6d702e29&=&format=webp&quality=lossless&width=1844&height=856');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    
+  }
+  #audio-controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #23272a;
+    padding: 12px 18px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px #ffffffaa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+  }
+  #audio-controls label {
+    color: #ddd;
+    user-select: none;
+  }
+  #audio-controls input[type="range"] {
+    width: 120px;
+  }
+  .views-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #23272a;
+    padding: 12px 18px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px #ffffffaa;
+    color: #ddd;
+    font-weight: 600;
+    font-family: 'El Messiri', sans-serif;
+    z-index: 10000;
+    user-select: none;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 12px #ffffffaa; }
+    50% { box-shadow: 0 0 20px rgb(182, 182, 182); }
+  }
+
+  /* ===== باقي التصميم ===== */
+
+  .profile-section {
+    width: 100%;
+    max-width: 900px;
+    background: #2a2c33;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 90px 0 30px; /* بعد البانر وصورة الحساب */
+    box-shadow: 0 0 20px #fff6f6;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .banner {
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    position: relative;
+  }
+.avatar {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 130px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 20px #ffffffaa;
+  }
+  .info {
+    padding: 80px 20px 20px;
+  }
+  .info h1 {
+    font-size: 32px;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .info .tag {
+    font-size: 18px;
+    color: #fff6f6;
+    margin-bottom: 6px;
+  }
+  .info .location {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 12px;
+  }
+  .info .bio {
+    font-size: 17px;
+    color: #ccc;
+    padding: 0 20px;
+    line-height: 1.6;
+  }
+
+  .section {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 50px;
+    background: #2a2c33;
+    padding: 25px 20px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px #fff6f6;
+  }
+  .section h2 {
+    color: #fff6f6;
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+  }
+  .item-box {
+    background: #1f2126;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 15px #ffffff22;
+    text-align: center;
+    cursor: text;
+    user-select: text;
+    width: 260px;
+  }
+  .item-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .item-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 14px;
+  }
+  .item-desc {
+    font-size: 15px;
+    color: #aaa;
+    padding: 0 14px 18px;
+    min-height: 48px;
+  }
+.banner:hover, .avatar:hover {
+  transform: scale(1.05);
+}
+.item-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* بقية الخصائص */
+}
+
+.item-box:hover {
+  transform: scale(1.1) translateY(-8px);
+  box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6);
+}
+body {
+  cursor: url('https://media.discordapp.net/attachments/1233881524550635650/1364154851495510056/cursor.png?ex=685714f5&is=6855c375&hm=c5d9aba884de73e1e9fd3ecf59cdc67ede59549091362aae1017fbbd1b421f90&=&format=webp&quality=lossless'), auto;
+}
+#audio-controls {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #23272a;
+  padding: 12px 18px;
+  border-radius: 14px;
+  box-shadow: 0 0 12px #5865F2aa;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+}
   
   
 </style>
@@ -193,7 +384,7 @@
 
 <div class="profile-section">
   <div class="banner" id="banner" style="background-image: url('https://media.discordapp.net/attachments/1210384791334158428/1321773494954098729/1091798226467827772.png?ex=685725be&is=6855d43e&hm=623aa5e2e2f11869553f33b3e84cb92c4501235983d69a63e16cf363c58f86d7&=&format=webp&quality=lossless'); position: relative;">
-    <div class="avatar" id="avatar" style="background-image: url('https://media.discordapp.net/attachments/1210384791334158428/1321773495440642100/1091798234676088872.png?ex=685725be&is=6855d43e&hm=51e0201217bc3fce9760aef0e91cd1c5bd26cc522200edc4035e0b3e790b1229&=&format=webp&quality=lossless');"></div>
+    <div class="avatar" id="avatar" style="background-image: url('https://media.discordapp.net/attachments/1384449763298115604/1386050957858836603/ezgif-4ad1dd5271460d.gif?ex=68584c0b&is=6856fa8b&hm=ddc9bf92d41558371d89f0a0862b3116715e86d55593aa371d79c456d07133cc&=');"></div>
   </div>
   
   
@@ -228,7 +419,7 @@
     tag: "311 Arena",
     location: "Unknown",
     bio: "مبرمج شغوف بابتكار حلول ذكية وبسيطة، يحب التحدي والتعلم المستمر، يسعى لتطوير نفسه دائماً وكتابة كود نظيف واحترافي.",
-    avatar: "https://media.discordapp.net/attachments/1210384791334158428/1321773495440642100/1091798234676088872.png?ex=685725be&is=6855d43e&hm=51e0201217bc3fce9760aef0e91cd1c5bd26cc522200edc4035e0b3e790b1229&=&format=webp&quality=lossless",
+    avatar: "https://media.discordapp.net/attachments/1384449763298115604/1386050957858836603/ezgif-4ad1dd5271460d.gif?ex=68584c0b&is=6856fa8b&hm=ddc9bf92d41558371d89f0a0862b3116715e86d55593aa371d79c456d07133cc&=",
     banner: "https://media.discordapp.net/attachments/1210384791334158428/1321773494954098729/1091798226467827772.png?ex=685725be&is=6855d43e&hm=623aa5e2e2f11869553f33b3e84cb92c4501235983d69a63e16cf363c58f86d7&=&format=webp&quality=lossless",
     music: "https://up4net.com/Taq/ScreenRecording-05-30-2025-20-37-25-1.mp3",
     games: [
@@ -251,7 +442,7 @@
     ],
     social: [
       { img: "https://graphicsprings.com/wp-content/uploads/2023/08/image-29-1024x576.png", name: "Discord", desc: "311 Arena", link: "https://discord.gg/3-1" },
-      { img: "https://www.pixartprinting.co.uk/blog/wp-content/uploads/2020/08/Instagram_Cover.jpg", name: "Instagram", desc: "تابعني", link: "https://www.instagram.com/_9zzt/?igsh=dDgzOTBvOGpvc2h3&utm_source=qr#" },
+      { img: "https://www.pixartprinting.co.uk/blog/wp-content/uploads/2020/08/Instagram_Cover.jpg", name: "Instagram", desc: "تابعني", link: "www.instagram.com/_9zzt?igsh=dDgzOTBvOGpvc2h3&utm_source=qr" },
       { img: "https://graphicsprings.com/wp-content/uploads/2023/08/image-29-1024x576.png", name: "Discord", desc: "Uae Rp", link: "https://discord.gg/uaa" },
 
     ]
