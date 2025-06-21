@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BinZayed</title>
+<style>
+  
+  @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap');
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'El Messiri', sans-serif;
+    cursor: url('https://filebin.net/il1numcsl092h8zl/Topographic%20Textures%20_%20After%20Effects%20_%20Topographic%20Design%20_%20Topographic%20Map%20_%20Background%20hd.mp4'), auto;
+  }
+  
+  body {
+    background-color: #1e1f22;
+    color: #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'El Messiri', sans-serif;
+      background-image: url('https://media.discordapp.net/attachments/1384449763298115604/1385897685281804410/image.png?ex=6857bd4c&is=68566bcc&hm=48c310a3f62abeb0f54b6ee488751cdded101bb77105bb2d51902e7b6d702e29&=&format=webp&quality=lossless&width=1844&height=856');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    
+  }
+  #audio-controls {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #23272a;
+    padding: 12px 18px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px #ffffffaa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+  }
+  #audio-controls label {
+    color: #ddd;
+    user-select: none;
+  }
+  #audio-controls input[type="range"] {
+    width: 120px;
+  }
+  .views-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #23272a;
+    padding: 12px 18px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px #ffffffaa;
+    color: #ddd;
+    font-weight: 600;
+    font-family: 'El Messiri', sans-serif;
+    z-index: 10000;
+    user-select: none;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 12px #ffffffaa; }
+    50% { box-shadow: 0 0 20px rgb(182, 182, 182); }
+  }
+
+  /* ===== باقي التصميم ===== */
+
+  .profile-section {
+    width: 100%;
+    max-width: 900px;
+    background: #2a2c33;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 90px 0 30px; /* بعد البانر وصورة الحساب */
+    box-shadow: 0 0 20px #fff6f6;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .banner {
+    background-size: cover;
+    background-position: center;
+    height: 180px;
+    position: relative;
+  }
+  .avatar {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 130px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 6px solid #2a2c33;
+    box-shadow: 0 0 20px #ffffffaa;
+  }
+  .info {
+    padding: 80px 20px 20px;
+  }
+  .info h1 {
+    font-size: 32px;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .info .tag {
+    font-size: 18px;
+    color: #fff6f6;
+    margin-bottom: 6px;
+  }
+  .info .location {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 12px;
+  }
+  .info .bio {
+    font-size: 17px;
+    color: #ccc;
+    padding: 0 20px;
+    line-height: 1.6;
+  }
+
+  .section {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 50px;
+    background: #2a2c33;
+    padding: 25px 20px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px #fff6f6;
+  }
+  .section h2 {
+    color: #fff6f6;
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+  }
+  .item-box {
+    background: #1f2126;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 15px #ffffff22;
+    text-align: center;
+    cursor: text;
+    user-select: text;
+    width: 260px;
+  }
+  .item-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .item-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 14px;
+  }
+  .item-desc {
+    font-size: 15px;
+    color: #aaa;
+    padding: 0 14px 18px;
+    min-height: 48px;
+  }
+  
+  
+</style>
+</head>
+<body>
+
+<div id="audio-controls">
+  <label for="volumeRange">الصوت</label>
+  <input type="range" id="volumeRange" min="0" max="1" step="0.01" />
+</div>
+<audio id="myAudio" autoplay loop muted>
+  <source src="https://voca.ro/18apnXdbuLkd" type="audio/mpeg" />
+</audio>
+<div class="views-counter" id="viewsCount">عدد المشاهدات: 0</div>
+
+<div class="profile-section">
+  <div class="banner" id="banner" style="background-image: url('https://media.discordapp.net/attachments/1210384791334158428/1321773494954098729/1091798226467827772.png?ex=685725be&is=6855d43e&hm=623aa5e2e2f11869553f33b3e84cb92c4501235983d69a63e16cf363c58f86d7&=&format=webp&quality=lossless'); position: relative;">
+    <div class="avatar" id="avatar" style="background-image: url('https://media.discordapp.net/attachments/1210384791334158428/1321773495440642100/1091798234676088872.png?ex=685725be&is=6855d43e&hm=51e0201217bc3fce9760aef0e91cd1c5bd26cc522200edc4035e0b3e790b1229&=&format=webp&quality=lossless');"></div>
+  </div>
+  
+  
+  <div class="info">
+    <h1 id="username">BinZayed</h1>
+    <div class="tag">311 Arena</div>
+    <div class="location" id="location">المنطقة: الإمارات</div>
+    <div class="bio" id="bio">مبرمج ومصمم محترف، أحب بناء أنظمة واقعية وتجارب مستخدم مذهلة.</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>الألعاب التي ألعبها</h2>
+  <div class="grid-container" id="gamesList"></div>
+</div>
+
+<div class="section">
+  <h2>اللغات التي أستخدمها</h2>
+  <div class="grid-container" id="languagesList"></div>
+</div>
+
+<div class="section">
+  <h2>السوشيال ميديا</h2>
+  <div class="grid-container" id="socialMediaList"></div>
+</div>
+
+<audio id="audioPlayer" autoplay loop preload="auto" style="display:none;"></audio>
+
+<script>
+  const config = {
+    username: "BinZayed",
+    tag: "311 Arena",
+    location: "Unknown",
+    bio: "مبرمج شغوف بابتكار حلول ذكية وبسيطة، يحب التحدي والتعلم المستمر، يسعى لتطوير نفسه دائماً وكتابة كود نظيف واحترافي.",
+    avatar: "https://media.discordapp.net/attachments/1210384791334158428/1321773495440642100/1091798234676088872.png?ex=685725be&is=6855d43e&hm=51e0201217bc3fce9760aef0e91cd1c5bd26cc522200edc4035e0b3e790b1229&=&format=webp&quality=lossless",
+    banner: "https://media.discordapp.net/attachments/1210384791334158428/1321773494954098729/1091798226467827772.png?ex=685725be&is=6855d43e&hm=623aa5e2e2f11869553f33b3e84cb92c4501235983d69a63e16cf363c58f86d7&=&format=webp&quality=lossless",
+    music: "https://up4net.com/Taq/ScreenRecording-05-30-2025-20-37-25-1.mp3",
+    games: [
+      { img: "https://logos-world.net/wp-content/uploads/2021/03/FiveM-Symbol.png", name: "Fivem", desc: "لعبة عالم مفتوح مثيرة." },
+      { img: "https://graphicsprings.com/wp-content/uploads/2023/07/image-62.png", name: "Minecraft", desc: "لعبة بناء ومغامرة." },
+      { img: "https://i.ytimg.com/vi/norPqlFyAIE/maxresdefault.jpg", name: "BlackOps, Mw", desc: "لاعب محترف معتزل قدر يوصل Iridescent  كلين." },
+      { img: "https://cdn.images.express.co.uk/img/dynamic/143/590x/Red-Dead-Redemption-2-release-date-764655.jpg?r=1686998680160", name: "Red Dead", desc: "Red Dead Redemption هي لعبة عالم مفتوح تمزج بين قصة مشوقة وأجواء الغرب الأمريكي القديم، تقدم تجربة غنية بمهمات مثيرة، استكشاف بيئات واسعة، ونظام قتال وتفاعل اجتماعي واقعي." },
+      { img: "https://wallpapers.com/images/hd/simple-red-valorant-logo-4izh3svwkekh6dxn.jpg", name: "Valorant", desc: "Valorant لعبة تصويب تكتيكية من منظور الشخص الأول، تجمع بين مهارات التصويب الدقيقة وقدرات أبطال فريدة في فرق من 5 لاعبين تنافسية." },
+      { img: "https://dev.epicgames.com/community/api/documentation/image/meta_tag?path=en-us/fortnite/fortnite-creator&application_version=1.0", name: "Fortnite", desc: "" }
+    ],
+    languages: [
+      { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/2048px-Lua-Logo.svg.png", name: "Lua" },
+      { img: "https://1000logos.net/wp-content/uploads/2020/09/CSS-Logo-2011.png", name: "Css" },
+      { img: "https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png", name: "Python" },
+      { img: "https://datascientest.com/wp-content/uploads/2024/10/Kali-Linux-DataScientest-1024x512.webp", name: "Kali" },
+      { img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png", name: "Html" },
+      { img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png", name: "Java" }
+
+
+    ],
+    social: [
+      { img: "https://graphicsprings.com/wp-content/uploads/2023/08/image-29-1024x576.png", name: "Discord", desc: "311 Arena", link: "https://discord.gg/3-1" },
+      { img: "https://www.pixartprinting.co.uk/blog/wp-content/uploads/2020/08/Instagram_Cover.jpg", name: "Instagram", desc: "تابعني", link: "https://www.instagram.com/_9zzt/?igsh=dDgzOTBvOGpvc2h3&utm_source=qr#" },
+      { img: "https://graphicsprings.com/wp-content/uploads/2023/08/image-29-1024x576.png", name: "Discord", desc: "Uae Rp", link: "https://discord.gg/uaa" },
+
+    ]
+  };
+
+  document.getElementById("username").textContent = config.username;
+  document.querySelector(".tag").textContent = config.tag;
+  document.getElementById("location").textContent = config.location;
+  document.getElementById("bio").textContent = config.bio;
+  document.getElementById("banner").style.backgroundImage = `url('${config.banner}')`;
+  document.getElementById("avatar").style.backgroundImage = `url('${config.avatar}')`;
+
+  const audio = document.getElementById("audioPlayer");
+  audio.src = config.music;
+  audio.volume = 0.5;
+  audio.play().catch(() => {});
+  const volumeSlider = document.getElementById("volumeRange");
+  volumeSlider.value = audio.volume;
+
+  volumeSlider.addEventListener("input", () => {
+    audio.volume = volumeSlider.value;
+    localStorage.setItem("profileAudioVolume", volumeSlider.value);
+  });
+
+  const savedVolume = localStorage.getItem("profileAudioVolume");
+  if (savedVolume !== null) {
+    audio.volume = savedVolume;
+    volumeSlider.value = savedVolume;
+  }
+
+  // عرض الألعاب
+  const gamesList = document.getElementById("gamesList");
+  config.games.forEach(g => {
+    const box = document.createElement("div");
+    box.className = "item-box";
+    box.innerHTML = `<img src="${g.img}" alt="${g.name}"><div class="item-name">${g.name}</div><div class="item-desc">${g.desc}</div>`;
+    gamesList.appendChild(box);
+  });
+
+  // عرض اللغات
+  const languagesList = document.getElementById("languagesList");
+  config.languages.forEach(l => {
+    const box = document.createElement("div");
+    box.className = "item-box";
+    box.innerHTML = `<img src="${l.img}" alt="${l.name}"><div class="item-name">${l.name}</div><div class="item-desc"></div>`;
+    languagesList.appendChild(box);
+  });
+
+  // عرض السوشيال ميديا
+  const socialList = document.getElementById("socialMediaList");
+  config.social.forEach(s => {
+    const box = document.createElement("a");
+    box.href = s.link;
+    box.target = "_blank";
+    box.className = "item-box";
+    box.innerHTML = `<img src="${s.img}" alt="${s.name}"><div class="item-name">${s.name}</div><div class="item-desc">${s.desc}</div>`;
+    socialList.appendChild(box);
+  });
+
+  // عداد المشاهدات
+  const viewsKey = "profilePageViews";
+  const sessionKey = "profilePageVisited";
+
+  if (!sessionStorage.getItem(sessionKey)) {
+    let views = parseInt(localStorage.getItem(viewsKey) || "0");
+    views++;
+    localStorage.setItem(viewsKey, views.toString());
+    sessionStorage.setItem(sessionKey, "true");
+  }
+  const currentViews = localStorage.getItem(viewsKey) || "0";
+  document.getElementById("viewsCount").textContent = "عدد المشاهدات: " + currentViews;
+</script>
+
+</body>
+</html>
