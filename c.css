@@ -78,12 +78,25 @@
     position: relative;
   }
 .avatar {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
   border-radius: 50%;
-  display: block;
-  }
+  border: 6px solid #2a2c33;
+  box-shadow: 0 0 20px #ffffffaa;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.avatar:hover {
+  transform: translateX(-50%) scale(1.1) rotate(2deg);
+  box-shadow: 0 0 30px #ffffffdd;
+}
+
   .info {
     padding: 80px 20px 20px;
   }
