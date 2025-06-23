@@ -105,7 +105,9 @@
   border: 6px solid #2a2c33;
   box-shadow: 0 0 20px #ffffffaa;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
 }
+
 
 .avatar:hover {
   transform: translateX(-50%) scale(1.1) rotate(2deg);
@@ -408,6 +410,14 @@ body {
     <source src="https://cdn.pixabay.com/video/2025/06/21/287143.mp3" type="audio/mpeg">
   </audio>
 </div>
+<script>
+  const viewKey = 'site_view_count';
+  let count = localStorage.getItem(viewKey);
+  if (!count) count = 1;
+  else count = parseInt(count) + 1;
+  localStorage.setItem(viewKey, count);
+  document.getElementById('viewCount').textContent = count.toLocaleString();
+</script>
 
 <style>
 .music-widget {
@@ -498,7 +508,7 @@ body {
       </div>
       <div class="song-details">
         <div class="song-title">Now Playing</div>
-        <div class="song-name">BinZayed - Songs</div>
+        <div class="song-name">No - Songs</div>
       </div>
     </div>
   </div>
