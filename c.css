@@ -58,7 +58,6 @@
   }
   
 
-  /* ===== باقي التصميم ===== */
 
   .profile-section {
     width: 100%;
@@ -66,7 +65,7 @@
     background: #2a2c33;
     border-radius: 16px;
     overflow: hidden;
-    margin: 90px 0 30px; /* بعد البانر وصورة الحساب */
+    margin: 90px 0 30px; 
     box-shadow: 0 0 20px #fff6f6;
     text-align: center;
     padding-bottom: 40px;
@@ -89,8 +88,20 @@
   border-radius: 50%;
   border: 6px solid #2a2c33;
   box-shadow: 0 0 20px #ffffffaa;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 10;
+  overflow: visible;
 }
+
+
+@keyframes pulseEffect {
+  0%, 100% {
+    box-shadow: 0 0 20px #5865f2, 0 0 40px #5865f2aa, 0 0 60px #5865f2cc;
+  }
+  50% {
+    box-shadow: 0 0 40px #5865f2, 0 0 60px #5865f2cc, 0 0 80px #5865f2;
+  }
+}
+
 
 .avatar:hover {
   transform: translateX(-50%) scale(1.1) rotate(2deg);
@@ -186,7 +197,7 @@ body {
   background: #23272a;
   padding: 12px 18px;
   border-radius: 14px;
-  box-shadow: 0 0 12px #4e0000aa;
+  box-shadow: 0 0 12px #2c211baa;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -208,13 +219,19 @@ body {
   
 }
 .avatar, .avatar-effect {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  border-radius: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 6px solid #2a2c33;
+  box-shadow: 0 0 20px #ffffffaa;
+  z-index: 10;
+  overflow: visible;
   }
 .music-widget {
   position: fixed;
@@ -224,7 +241,7 @@ body {
   color: white;
   padding: 14px 18px;
   border-radius: 12px;
-  box-shadow: 0 0 12px #4e0000aa;
+  box-shadow: 0 0 12px #6e574b;
   display: flex;
   align-items: center;
   z-index: 9999;
@@ -264,7 +281,7 @@ body {
 .waves span {
   display: block;
   width: 4px;
-  background: #4e0000;
+  background: #2c211b;
   animation: wave 1.2s infinite ease-in-out;
 }
 .waves span:nth-child(1) { animation-delay: 0s; height: 8px; }
@@ -288,7 +305,7 @@ body {
   display: flex;
   gap: 12px;
   align-items: center;
-  box-shadow: 0 0 12px #4e0000aa;
+  box-shadow: 0 0 12px #2c211baa;
   z-index: 9999;
   font-family: 'El Messiri', sans-serif;
   cursor: default;
@@ -301,7 +318,7 @@ body {
   padding: 10px;
   border-radius: 12px;
   z-index: 9999;
-  box-shadow: 0 0 15px #4e0000;
+  box-shadow: 0 0 15px #2c211b;
 }
 
 #audio-visualizer canvas {
@@ -316,7 +333,7 @@ body {
   padding: 10px 15px;
   border-radius: 12px;
   z-index: 9999;
-  box-shadow: 0 0 15px #4e0000;
+  box-shadow: 0 0 15px #2c211b;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -331,7 +348,7 @@ body {
 #audio-visualizer button {
   padding: 6px 12px;
   border: none;
-  background-color: #4e0000;
+  background-color: #2c211b;
   color: white;
   border-radius: 8px;
   font-size: 14px;
@@ -340,14 +357,14 @@ body {
 }
 
 #audio-visualizer button:hover {
-  background-color: #4e0000;
+  background-color: #2c211b;
 }
 #username {
   font-size: 38px;
   font-weight: bold;
-  background: linear-gradient(90deg, #4e0000, #00ffff, #ff00ff);
+  background: linear-gradient(90deg, #000000, #00ffff, #ff00ff);
   background-size: 300%;
-  text-shadow: 0 0 10px #4e0000;
+  text-shadow: 0 0 10px #000000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animateText 5s linear infinite;
