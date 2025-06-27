@@ -284,56 +284,6 @@
     margin-bottom: 6px;
     color: #7a6f69;
   }
-  .social-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #222;
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px #00000055;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-.social-box:hover {
-  transform: scale(1.03);
-}
-.social-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  background: linear-gradient(120deg, transparent 40%, #fff 70%);
-  mix-blend-mode: overlay;
-}
-.social-box .social-content {
-  z-index: 2;
-  max-width: 80%;
-}
-.social-box .social-title {
-  font-size: 24px;
-  font-weight: bold;
-}
-.social-box .social-desc {
-  margin-top: 6px;
-  font-size: 15px;
-  color: #ddd;
-}
-.social-box .social-btn {
-  background: #00000022;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 14px;
-  color: white;
-  font-weight: bold;
-  white-space: nowrap;
-  z-index: 2;
-}
-
   .info .tag {
     font-size: 18px;
     color: #7a6f69;
@@ -609,29 +559,12 @@ body {
 
 
     ],
-social: [
-  {
-    img: "https://www.raed.net/img?id=1369633",
-    name: "Discord",
-    desc: "انضم إلى سيرفرنا وتواصل معنا مباشرة.",
-    link: "https://discord.gg/3-1",
-    color: "#7289da"
-  },
-  {
-    img: "https://cdn-icons-png.flaticon.com/512/3536/3536424.png",
-    name: "Instagram",
-    desc: "صور ومقاطع من حياتنا اليومية.",
-    link: "https://instagram.com/example",
-    color: "#e1306c"
-  },
-  {
-    img: "https://cdn-icons-png.flaticon.com/512/3670/3670151.png",
-    name: "Snapchat",
-    desc: "احصل على لمحات حصرية ومحتوى يومي ممتع من خلال حسابنا على Snapchat.",
-    link: "https://snapchat.com/add/example",
-    color: "#fffc00"
-  }
-]
+    social: [
+      { img: "https://www.raed.net/img?id=1369633", name: "Discord", desc: "311 Arena", link: "https://discord.gg/3-1" },
+      { img: "https://www.raed.net/img?id=1369639", name: "Discord", desc: "Uae RolePlay", link: "https://discord.gg/uaa" },
+      { img: "https://www.raed.net/img?id=1369636", name: "Discord", desc: "911 Family", link: "https://discord.gg/c91" },
+
+    ]
   };
 
   document.getElementById("username").textContent = config.username;
